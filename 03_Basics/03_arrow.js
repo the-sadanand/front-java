@@ -24,8 +24,24 @@ const chai= function(){
 // chai()
 
 
-const chai2= () => {   
-    // console.log("garam hai")
-    let username="dune"
-    console.log(this.username)
+// const chai2= () => {   
+//     // console.log("garam hai")
+//     let username="dune"
+//     console.log(this.username)
+// }
+
+
+// chai2() // undefined
+
+// const chai3= () => {
+//     console.log(this)
+//     console.log(this.username)
+// }       
+
+const sum= (a,b) => {
+    return a+b
 }
+
+// console.log(sum(10,20)) // 30  
+const addTwo=(a,b) =>(a+b) 
+console.log(addTwo(10,20)) // 30 
