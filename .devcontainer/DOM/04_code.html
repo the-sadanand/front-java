@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document object MOdel</title>
+</head>
+<body style="background-color: black;color: aquamarine;">
+    <ul class="language">
+        <li>javaScript</li>
+    </ul>
+    <script>
+        function addLanguage(langName){
+            const li=document.createElement('li');
+            li.innerHTML=`${langName}`
+            document.querySelector('.language').appendChild(li)
+        }
+        addLanguage("python");
+        addLanguage("cpp");
+        addLanguage("c");
+        addLanguage("typescript");
+        addLanguage("java")
+        function addOptiLanguage(langName){
+            const li=document.createElement('li');
+            li.appendChild(document.createTextNode(langName))
+            document.querySelector('.language').appendChild(li)   
+        }
+
+        addOptiLanguage("golang")
+
+        // edit
+
+        const secondLang=document.querySelector('li:nth-child(2)')
+        const neLi=document.createElement('li')
+        neLi.textContent="Mojo"
+        secondLang.replaceWith(neLi)
+
+        const firstLang=document.querySelector('li:nth-child(1)')
+        const neli2=document.createElement('li')
+        neli2.textContent="rust"
+        firstLang.replaceWith(neli2)
+        const firstLang2=document.querySelector('li:nth-child(1)')
+        firstLang2.outerHTML='<li>ruby</li>'
+
+        //remove
+        const lastLang=document.querySelector('li:last-child')
+        lastLang.remove()
+    </script>
+</body>
+</html>

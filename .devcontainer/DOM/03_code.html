@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: black ;color:red ;">
+    <p>hello about creation of new element using div</p>
+    <button onclick="darkMode()"; ondblclick="body.style.backgroundColor='black';">click me</button>
+</body>
+<script>
+    const div=document.createElement("div")
+    console.log(div)
+    div.innerHTML="Hi I am new";
+    const bod=document.querySelector('body').append(div)
+    document.body.appendChild(div)
+    console.log(bod)
+    div.class="newdiv";
+    div.id=Math.random(Math.random()*10+1);
+    div.setAttribute("title","new-title")
+    console.log(div.id);
+    const addText=document.createTextNode("new div hai")
+    div.appendChild(addText)
+    const newbtn=document.querySelector('button');
+    function darkMode(){
+        document.querySelector('body').style.backgroundColor='red';
+    }
+
+    // function darkMode()
+</script>
+</html>
