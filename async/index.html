@@ -6,9 +6,31 @@
     <title>hello wait haa jii</title>
 </head>
 <body>
-    <p>
+    <h1>
         hello ji wait haa jii
-    </p>
-    <button>click me</button>
+    </h1>
+    <button id="stop">click me</button>
 </body>
+<script>
+    setTimeout(function(){
+        console.log('hi i am sadanand')
+    },2000)
+     const greet= function(){
+        console.log('welcome')
+    }
+    setTimeout(greet/*()*/,2000)
+    const h1Handler= function(){
+    document.querySelector('h1').innerHTML='js practice'
+    document.querySelector('h1').innerHTML='hello ji'
+    }
+   const h1Handlerskip= setTimeout(h1Handler,2000)
+//    clearTimeout(h1Handlerskip)
+    document.querySelector('#stop').addEventListener('click',function(){
+        clearTimeout(h1Handlerskip)
+        console.log("stopped")
+    })
+    // setInterval(function(){
+    //     console.log('hi i am sadanand')
+    // },2000)
+</script>
 </html>

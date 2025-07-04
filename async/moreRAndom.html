@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="width: 200px; height: 200px;background-color: #00ffff;"></div>
+    <script>
+        let nth=0
+        let code='0123456789abcdef'
+        setInterval(function(){document.querySelector('body').style.backgroundColor=`#${code[Math.round(Math.random()*16)]}${code[Math.round(Math.random()*16)]}${code[Math.round(Math.random()*16)]}${code[Math.round(Math.random()*16)]}${code[Math.round(Math.random()*16)]}${code[Math.round(Math.random()*16)]}`;
+        document.querySelector('div').style.backgroundColor=`#${code[Math.round(Math.random()*16)]}${code[Math.round(Math.random()*16)]}${code[Math.round(Math.random()*16)]}${code[Math.round(Math.random()*16)]}${code[Math.round(Math.random()*16)]}${code[Math.round(Math.random()*16)]}`;
+            console.log(nth++)
+            console.log(document.querySelector('div').style.backgroundColor)
+        },2000)
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setInterval</title>
+</head>
+<body>
+    <h1>
+        hum aur hummm
+    </h1>
+    <button id="start">start</button>
+    <button id="stop">stop</button>
+    <script>
+        let intervalId = null;
+        const h1changer = function() {
+            document.querySelector('h1').innerHTML = 'tum tumm';
+            console.log(`hi ${Date.now()}`);
+        };
+        document.querySelector('#start').addEventListener('click', function() {
+            if (intervalId === null) {
+                intervalId = setInterval(h1changer, 2000);
+            }
+        });
+        document.querySelector('#stop').addEventListener('click', function() {
+            clearInterval(intervalId);
+            intervalId = null;
+            document.querySelector('h1').innerHTML ='hum aur hummm';
+
+        });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>color change</title>
+</head>
+<body>
+    <h1>box to show color</h1>
+    <div id="boxColor" style="height: 200px; width: 200px;"></div>
+    <button id="stop">stop</button>
+    <button id="start">start</button>
+    <script>
+        let color=['green','red','yellow','pink','orange']
+        let s=['2px','4px','16px','256px']
+        let i=0;
+        let j=0
+        let k=0
+        let box=document.querySelector("#boxColor");
+        // let  colorMachine=setInterval(function(){
+        //     box.style.backgroundColor=color[i++]
+        // },2000)
+        let colorMachine=null
+        let st=document.querySelector('#stop');
+        let str=document.querySelector('#start')
+        st.addEventListener('click',function(){
+            if(colorMachine){
+                clearInterval(colorMachine)
+                colorMachine=null
+            }
+        })
+        str.addEventListener('click',function(){
+            if(colorMachine===null){
+              colorMachine=setInterval(function(){
+            box.style.backgroundColor=color[((i++)%color.length)]
+            
+            box.style.width=s[j++]
+            box.style.height=s[k++]
+            
+            console.log(i)
+        },1000) 
+            }
+        })
+        
+        
+
+    </script>
+</body>
+
+</html>
