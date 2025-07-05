@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const url="https://api.github.com/users/hiteshchoudhary"
+        const htgeof=new  XMLHttpRequest()
+        htgeof.open('GET',url)
+        htgeof.onreadystatechange=function(){
+            console.log(htgeof.readyState)
+            if(htgeof.readyState===4){
+                // console.log(this.responseText)
+              /*  const data=this.responseText
+                console.log(data)
+                console.log(typeof(data)) //string
+                console.log(responseText.followers)//so . is not working */
+                const data=JSON.parse(this.responseText)
+                console.log(data)
+                console.log(typeof(data))
+                console.log(data.followers)
+            }
+        }
+        htgeof.send()
+    </script>
+</body>
+</html>
