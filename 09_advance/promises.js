@@ -141,4 +141,9 @@ async function getallUsers() {
     }
 }
 
-getallUsers()
+// getallUsers()
+
+fetch('https://jsonplaceholder.typicode.com/users')
+.then((response)=>{return response.json()})
+.then((data)=>{console.log(data)})
+.catch(()=>console.log(error))
