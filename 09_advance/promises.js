@@ -59,16 +59,16 @@
 
 // example 5 >>>>>>>>>>>>>>>>>>>>>>>>>
 
-const promiseFour = new Promise(function (resolve, reject) {
-  let error = true; /* change to false <->ture for check */
-  setTimeout(function () {
-    if (!error) {
-      resolve({ userName: "sada", email: "sada123@" });
-    } else {
-      reject("some error happened");
-    }
-  }, 2000);
-});
+// const promiseFour = new Promise(function (resolve, reject) {
+//   let error = true; /* change to false <->ture for check */
+//   setTimeout(function () {
+//     if (!error) {
+//       resolve({ userName: "sada", email: "sada123@" });
+//     } else {
+//       reject("some error happened");
+//     }
+//   }, 2000);
+// });
 
 // const username=promiseFour.then(function(user){
 //     console.log(user)
@@ -79,14 +79,66 @@ const promiseFour = new Promise(function (resolve, reject) {
 
 /* so here chaining comes in role  */
 
-promiseFour
-  .then(function (user) {
-    console.log(user);
-    return user.userName; /* this value go to further next then */
-  })
-  .then(function (u) {
-    console.log(u);
-  })
-  .catch(function (error /* name as you like */) {
-    console.log(error);
-  });
+// promiseFour
+//   .then(function (user) {
+//     console.log(user);
+//     return user.userName; /* this value go to further next then */
+//   })
+//   .then(function (u) {
+//     console.log(u);
+//   })
+//   .catch(function (error /* name as you like */) {
+//     console.log(error);
+//   }).finally(()=>console.log('The promise is either resolved and rejected'))
+
+
+/* example 5....................... */
+
+// const promisefive= new Promise(function(resolve,reject){
+//     setTimeout(function(){
+//         let error=true;
+//         if(!error){
+//             resolve({userName:'sada',password:'123sada'})
+//         }
+//         else{
+//             reject(`your password  is wrong`)
+//         }
+//     },2000)
+// })
+/* Async await can't handle error directly */
+//  async function asyncAwait(){
+//     const response= await promisefive
+//     console.log(response)
+// }
+
+// async function asyncAwait() {
+//     try {
+//         const response = await promisefive
+//         console.log(response)
+//     } catch (error) {
+//         console.log(error)
+//     }
+// }
+
+// asyncAwait()
+
+
+
+///new one example  
+
+
+
+async function getallUsers() {
+    try {
+        // ...existing code...
+       const response = await fetch('https://jsonplaceholder.typicode.com/users')
+      // ...existing code...
+        // console.log(response);
+        const data = await response.json() /* .json() to convert in json , 'also need time' */
+        console.log(data)
+    } catch (error) {
+        console.log("E:" ,error)
+    }
+}
+
+getallUsers()
