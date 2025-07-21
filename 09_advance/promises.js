@@ -128,22 +128,36 @@
 
 
 
-async function getallUsers() {
-    try {
-        // ...existing code...
-       const response = await fetch('https://jsonplaceholder.typicode.com/users')
-      // ...existing code...
-        // console.log(response);
-        const data = await response.json() /* .json() to convert in json , 'also need time' */
-        console.log(data)
-    } catch (error) {
-        console.log("E:" ,error)
-    }
-}
+// async function getallUsers() {
+//     try {
+//         // ...existing code...
+//        const response = await fetch('https://jsonplaceholder.typicode.com/users')
+//       // ...existing code...
+//         // console.log(response);
+//         const data = await response.json() /* .json() to convert in json , 'also need time' */
+//         console.log(data)
+//     } catch (error) {
+//         console.log("E:" ,error)
+//     }
+// }
 
-// getallUsers()
+// // getallUsers()
 
-fetch('https://jsonplaceholder.typicode.com/users')
-.then((response)=>{return response.json()})
-.then((data)=>{console.log(data)})
-.catch(()=>console.log(error))
+// fetch('https://jsonplaceholder.typicode.com/users')
+// .then((response)=>{return response.json()})
+// .then((data)=>{console.log(data)})
+// .catch(()=>console.log(error))
+
+
+// fetching : to get and bring back
+
+// fetching my github details
+
+fetch('https://api.github.com/users/the-sadanand')
+  .then(response => response.json())
+  .then(function(data){
+    console.log(data)
+    return data
+  }).then(function(data){
+    console.log(data.followers)
+  })
