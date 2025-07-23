@@ -25,3 +25,8 @@ class Teacher extends User{
 
 const fav = new Teacher("max", "max @gmail.com", "max .com ")
 fav.addCourse()
+
+fav.logUser()
+console.log(fav===Teacher)
+console.log(fav instanceof Teacher)
+console.log(fav instanceof User)
